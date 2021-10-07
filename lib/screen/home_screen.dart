@@ -15,10 +15,16 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text('Inplicit Widgets'),
-              ElevatedButton(onPressed: () {}, child: Text('Animated Container')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'container');
+                  },
+                  child: Text('Animated Container')),
               ElevatedButton(onPressed: () {}, child: Text('Animated Opacity')),
-              ElevatedButton(onPressed: () {}, child: Text('Animated CrossFade')),
-              ElevatedButton(onPressed: () {}, child: Text('Tween Animation Builder')),
+              ElevatedButton(
+                  onPressed: () {}, child: Text('Animated CrossFade')),
+              ElevatedButton(
+                  onPressed: () {}, child: Text('Tween Animation Builder')),
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:animation_training/screen/animation_container_screen.dart';
 import 'package:animation_training/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => HomeScreen(),
+        'container':(context)=> AnimationContainerScreen(),
       },
     );
   }
