@@ -20,7 +20,11 @@ class HomeScreen extends StatelessWidget {
                     Navigator.pushNamed(context, 'container');
                   },
                   child: Text('Animated Container')),
-              ElevatedButton(onPressed: () {}, child: Text('Animated Opacity')),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'opacity');
+                  },
+                  child: Text('Animated Opacity')),
               ElevatedButton(
                   onPressed: () {}, child: Text('Animated CrossFade')),
               ElevatedButton(
