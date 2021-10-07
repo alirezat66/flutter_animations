@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class AnimationContainerScreen extends StatefulWidget {
   const AnimationContainerScreen({Key? key}) : super(key: key);
@@ -17,6 +18,15 @@ class _AnimationContainerScreenState extends State<AnimationContainerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        title: Text('Animation Container'),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(IconlyLight.arrow_left)),
+      ),
       body: SafeArea(
         child: Center(
           child: Column(
