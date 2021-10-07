@@ -9,6 +9,11 @@ class OpacityAnimationScreen extends StatefulWidget {
 }
 
 class _OpacityAnimationScreenState extends State<OpacityAnimationScreen> {
+  double width = 300;
+  double height = 250;
+  double radius = 20;
+  Color color = Colors.amber;
+  double opacity = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,26 @@ class _OpacityAnimationScreenState extends State<OpacityAnimationScreen> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [],
+          children: [
+            AnimatedOpacity(
+              opacity: opacity,
+              duration: Duration(seconds: 1),
+              curve: Curves.bounceOut,
+              child: Container(
+                width: width,
+                height: height,
+                decoration: BoxDecoration(
+                    color: color, borderRadius: BorderRadius.circular(radius)),
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    opacity = opacity == 1 ? 0.4 : 1;
+                  });
+                },
+                child: Text('animate'))
+          ],
         ),
       ),
     );
