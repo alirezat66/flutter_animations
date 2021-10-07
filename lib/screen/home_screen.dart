@@ -26,7 +26,15 @@ class HomeScreen extends StatelessWidget {
                   },
                   child: Text('Animated Opacity')),
               ElevatedButton(
-                  onPressed: () {}, child: Text('Animated CrossFade')),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'crossfade');
+                  },
+                  child: Text('Animated CrossFade')),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'alignment');
+                  },
+                  child: Text('Animated Alignment')),
               ElevatedButton(
                   onPressed: () {}, child: Text('Tween Animation Builder')),
             ],
