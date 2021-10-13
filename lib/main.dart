@@ -4,6 +4,7 @@ import 'package:animation_training/screen/animation_cross_fade_screen.dart';
 import 'package:animation_training/screen/animation_fade_screen.dart';
 import 'package:animation_training/screen/animation_opacity_screen.dart';
 import 'package:animation_training/screen/animation_padding_screen.dart';
+import 'package:animation_training/screen/animation_position_screen.dart';
 import 'package:animation_training/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         'alignment': (context) => AlignmentAnimationScreen(),
         'padding': (context) => PaddingAnimationScreen(),
         'fade': (context) => FadeAnimationScreen(),
+        'position': (context) => PositionAnimationScreen(),
       },
     );
   }

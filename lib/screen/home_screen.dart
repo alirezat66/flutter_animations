@@ -46,6 +46,11 @@ class HomeScreen extends StatelessWidget {
                     Navigator.pushNamed(context, 'fade');
                   },
                   child: Text('Fade Image')),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'position');
+                  },
+                  child: Text('Animated Position')),
               ElevatedButton(
                   onPressed: () {}, child: Text('Tween Animation Builder')),
             ],
