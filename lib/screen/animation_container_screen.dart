@@ -9,9 +9,10 @@ class AnimationContainerScreen extends StatefulWidget {
       _AnimationContainerScreenState();
 }
 
-class _AnimationContainerScreenState extends State<AnimationContainerScreen> {
+class _AnimationContainerScreenState extends State<AnimationContainerScreen>
+    with TickerProviderStateMixin {
   double width = 300;
-  double height = 250;
+  double height = 150;
   double radius = 20;
   Color color = Colors.amber;
   @override
@@ -49,14 +50,29 @@ class _AnimationContainerScreenState extends State<AnimationContainerScreen> {
                   onPressed: () {
                     setState(() {
                       width = width == 300 ? 250 : 300;
-                      height = height == 250 ? 300 : 250;
+                      height = height == 150 ? 200 : 150;
                       color = color == Colors.amber
                           ? Colors.redAccent
                           : Colors.amber;
                       radius = radius == 20 ? 5 : 20;
                     });
                   },
-                  child: Text('animate'))
+                  child: Text('animate')),
+              SizedBox(
+                height: 20,
+              ),
+              AnimatedSize(
+                duration: Duration(milliseconds: 600),
+                vsync: this,
+                child: Container(
+                  width: width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(radius),
+                    color: color,
+                  ),
+                ),
+              )
             ],
           ),
         ),

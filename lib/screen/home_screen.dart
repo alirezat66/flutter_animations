@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, 'container');
                   },
-                  child: Text('Animated Container')),
+                  child: Text('Animated Container And Size')),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, 'opacity');
@@ -35,6 +35,17 @@ class HomeScreen extends StatelessWidget {
                     Navigator.pushNamed(context, 'alignment');
                   },
                   child: Text('Animated Alignment')),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'padding');
+                  },
+                  
+                  child: Text('Animated Padding')),
+                  ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'fade');
+                  },
+                  child: Text('Fade Image')),
               ElevatedButton(
                   onPressed: () {}, child: Text('Tween Animation Builder')),
             ],
