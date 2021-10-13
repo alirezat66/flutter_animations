@@ -1,5 +1,5 @@
 import 'package:animation_training/screen/animation_alignment_screen.dart';
-import 'package:animation_training/screen/animation_container_screen.dart';
+import 'package:animation_training/screen/animation_container_widget.dart';
 import 'package:animation_training/screen/animation_cross_fade_screen.dart';
 import 'package:animation_training/screen/animation_fade_screen.dart';
 import 'package:animation_training/screen/animation_opacity_screen.dart';
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => HomeScreen(),
-        'container': (context) => AnimationContainerScreen(),
+        'container': (context) => AnimationContainerWidget(),
         'opacity': (context) => OpacityAnimationScreen(),
         'crossfade': (context) => CrossFadeAnimationScreen(),
         'alignment': (context) => AlignmentAnimationScreen(),
