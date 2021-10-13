@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimationContainerWidget extends StatefulWidget {
-  const AnimationContainerWidget({Key? key}) : super(key: key);
+  final Curve curve;
+  const AnimationContainerWidget({Key? key, required this.curve}) : super(key: key);
 
   @override
   _AnimationContainerWidgetState createState() =>
@@ -23,7 +24,7 @@ class _AnimationContainerWidgetState extends State<AnimationContainerWidget>
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           AnimatedContainer(
-            curve: Curves.easeInToLinear,
+            curve: widget.curve,
             duration: Duration(milliseconds: 600),
             width: width,
             height: height,
@@ -36,6 +37,7 @@ class _AnimationContainerWidgetState extends State<AnimationContainerWidget>
           SizedBox(height: 10),
           AnimatedSize(
             duration: Duration(milliseconds: 600),
+            curve: widget.curve,
             vsync: this,
             child: Container(
               width: width,
