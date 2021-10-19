@@ -19,6 +19,12 @@ class _ClockState extends State<Clock> {
   }
 
   @override
+  void dispose() {
+    _timeDilationTimer.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -34,13 +40,16 @@ class _ClockState extends State<Clock> {
                       blurRadius: 64,
                       color: Colors.black.withOpacity(0.14)),
                 ]),
-            child: Transform.rotate(angle: -pi/2,child: CustomPaint(painter: ClockPainter(dateTime))),
+            child: Transform.rotate(
+                angle: -pi / 2,
+                child: CustomPaint(painter: ClockPainter(dateTime))),
           )),
     );
   }
 
+  var _timeDilationTimer = Timer.periodic(Duration(seconds: 1), (timer) {});
   void _startTimer() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    _timeDilationTimer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         dateTime = DateTime.now();
       });
@@ -105,8 +114,7 @@ class ClockPainter extends CustomPainter {
           ..color = Colors.black26
           ..style = PaintingStyle.stroke
           ..strokeWidth = 6);
-    
-    
+
     canvas.drawCircle(center, 10, dotPainter);
   }
 

@@ -1,8 +1,8 @@
-
 import 'package:animation_training/screen/animation_rotation_widget.dart';
+import 'package:animation_training/screen/explicit_animation_position.dart';
+import 'package:animation_training/screen/heart_beat.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:dropdown_selection/dropdown_selection.dart';
 
 class ExplicitScreen extends StatefulWidget {
   const ExplicitScreen({Key? key}) : super(key: key);
@@ -12,10 +12,8 @@ class ExplicitScreen extends StatefulWidget {
 }
 
 class _ExplicitScreenState extends State<ExplicitScreen> {
- 
   @override
   void initState() {
-  
     super.initState();
   }
 
@@ -45,7 +43,15 @@ class _ExplicitScreenState extends State<ExplicitScreen> {
                   SizedBox(
                     height: 16,
                   ),
-                  AnimatedRotationWidget()
+                  AnimatedRotationWidget(),
+                  Divider(
+                    thickness: 4,
+                  ),
+                  ExplicitPositionAnimation(),
+                  Divider(
+                    thickness: 4,
+                  ),
+                  HeartBeat(),
                 ],
               ),
             ),

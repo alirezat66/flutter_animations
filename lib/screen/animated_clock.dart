@@ -18,6 +18,14 @@ class _AnimatedClockState extends State<AnimatedClock>
   double minuteAngle = 0;
   double hourAngle = 0;
   @override
+  void dispose() {
+    _animMinuteController.stop();
+    _animSecondController.stop();
+    _animHoureController.stop();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     DateTime dateTime = DateTime.now();
     print(dateTime.hour);
@@ -36,13 +44,16 @@ class _AnimatedClockState extends State<AnimatedClock>
     _animSecondController.forward(from: dateTime.second / 60);
     _animMinuteController.forward(from: dateTime.minute / 60);
     int hour = 0;
-    if(dateTime.hour>12){
+    if (dateTime.hour > 12) {
       hour = dateTime.hour - 12;
+    }else{
+      hour = dateTime.hour;
     }
-    
+
     var hoursFrom = hour != 0
-        ? hour / 12
+        ? (hour / 12 + (dateTime.minute * 60 + dateTime.second) / 43200)
         : ((dateTime.minute * 60 + dateTime.second) / 43200);
+    print(hoursFrom);
     _animHoureController.forward(from: hoursFrom);
 
     _animSecondController.addStatusListener((status) {

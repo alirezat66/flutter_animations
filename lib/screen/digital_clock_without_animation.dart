@@ -17,7 +17,11 @@ class _DigitalClockWithoutAnimationState
     _checkClock();
     super.initState();
   }
-
+  @override
+  void dispose() {
+    _timeDilationTimer.cancel();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -54,8 +58,10 @@ class _DigitalClockWithoutAnimationState
 
   TimeOfDay _timeOfDay = TimeOfDay.now();
   DateTime _dateTime = DateTime.now();
+    Timer _timeDilationTimer = Timer.periodic(Duration(seconds:1), (timer) { });
+
   void _checkClock() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
+   _timeDilationTimer =  Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         _timeOfDay = TimeOfDay.now();
         _dateTime = DateTime.now();
