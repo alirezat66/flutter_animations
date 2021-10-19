@@ -1,6 +1,7 @@
-
 import 'package:animation_training/screen/animation_fade_screen.dart';
+import 'package:animation_training/screen/explicit_animation.dart';
 import 'package:animation_training/screen/home_screen.dart';
+import 'package:animation_training/screen/implicit_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +20,9 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home': (context) => HomeScreen(),
+        'implicit': (context) => ImplicitScreen(),
         'fade': (context) => FadeAnimationScreen(),
+        'explicit': (context) => ExplicitScreen(),
       },
     );
   }
