@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ExplicitPositionAnimation extends StatefulWidget {
-  ExplicitPositionAnimation({Key? key}) : super(key: key);
+  ExplicitPositionAnimation({Key key}) : super(key: key);
 
   @override
   _ExplicitPositionAnimationState createState() =>
@@ -10,7 +10,7 @@ class ExplicitPositionAnimation extends StatefulWidget {
 
 class _ExplicitPositionAnimationState extends State<ExplicitPositionAnimation>
     with TickerProviderStateMixin {
-  late AnimationController _animationController;
+   AnimationController _animationController;
   @override
   void initState() {
     _animationController = new AnimationController(

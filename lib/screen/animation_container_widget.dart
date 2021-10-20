@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AnimationContainerWidget extends StatefulWidget {
   final Curve curve;
-  const AnimationContainerWidget({Key? key, required this.curve}) : super(key: key);
+  const AnimationContainerWidget({Key key,  this.curve}) : super(key: key);
 
   @override
   _AnimationContainerWidgetState createState() =>

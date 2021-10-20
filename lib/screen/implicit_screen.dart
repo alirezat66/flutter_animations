@@ -11,7 +11,7 @@ import 'package:iconly/iconly.dart';
 import 'package:dropdown_selection/dropdown_selection.dart';
 
 class ImplicitScreen extends StatefulWidget {
-  const ImplicitScreen({Key? key}) : super(key: key);
+  const ImplicitScreen({Key key}) : super(key: key);
 
   @override
   _ImplicitScreenState createState() => _ImplicitScreenState();

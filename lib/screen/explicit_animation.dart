@@ -1,11 +1,12 @@
 import 'package:animation_training/screen/animation_rotation_widget.dart';
+import 'package:animation_training/screen/clabber_widget.dart';
 import 'package:animation_training/screen/explicit_animation_position.dart';
 import 'package:animation_training/screen/heart_beat.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 class ExplicitScreen extends StatefulWidget {
-  const ExplicitScreen({Key? key}) : super(key: key);
+  const ExplicitScreen({Key key}) : super(key: key);
 
   @override
   _ExplicitScreenState createState() => _ExplicitScreenState();
@@ -52,6 +53,10 @@ class _ExplicitScreenState extends State<ExplicitScreen> {
                     thickness: 4,
                   ),
                   HeartBeat(),
+                  Divider(
+                    thickness: 4,
+                  ),
+                  ClabberWidget(),
                 ],
               ),
             ),

@@ -12,7 +12,7 @@ class ScaleAnimatedText extends AnimatedText {
   ScaleAnimatedText(
     String text, {
     TextAlign textAlign = TextAlign.start,
-    TextStyle? textStyle,
+    TextStyle textStyle,
     Duration duration = const Duration(milliseconds: 2000),
     this.scalingFactor = 0.5,
   }) : super(
@@ -22,7 +22,7 @@ class ScaleAnimatedText extends AnimatedText {
           duration: duration,
         );
 
-  late Animation<double> _fadeIn, _fadeOut, _scaleIn, _scaleOut;
+   Animation<double> _fadeIn, _fadeOut, _scaleIn, _scaleOut;
 
   @override
   void initAnimation(AnimationController controller) {
@@ -58,7 +58,7 @@ class ScaleAnimatedText extends AnimatedText {
   Widget completeText(BuildContext context) => SizedBox.shrink();
 
   @override
-  Widget animatedBuilder(BuildContext context, Widget? child) {
+  Widget animatedBuilder(BuildContext context, Widget child) {
     return ScaleTransition(
       scale: _scaleIn.value != 1.0 ? _scaleIn : _scaleOut,
       child: Opacity(
@@ -75,17 +75,17 @@ class ScaleAnimatedText extends AnimatedText {
 @Deprecated('Use AnimatedTextKit with ScaleAnimatedText instead.')
 class ScaleAnimatedTextKit extends AnimatedTextKit {
   ScaleAnimatedTextKit({
-    Key? key,
-    required List<String> text,
+    Key key,
+     List<String> text,
     TextAlign textAlign = TextAlign.start,
-    TextStyle? textStyle,
+    TextStyle textStyle,
     double scalingFactor = 0.5,
     Duration duration = const Duration(milliseconds: 2000),
     Duration pause = const Duration(milliseconds: 500),
-    VoidCallback? onTap,
-    void Function(int, bool)? onNext,
-    void Function(int, bool)? onNextBeforePause,
-    VoidCallback? onFinished,
+    VoidCallback onTap,
+    void Function(int, bool) onNext,
+    void Function(int, bool)onNextBeforePause,
+    VoidCallback onFinished,
     bool isRepeatingAnimation = true,
     int totalRepeatCount = 3,
     bool repeatForever = false,
@@ -115,7 +115,7 @@ class ScaleAnimatedTextKit extends AnimatedTextKit {
   static List<AnimatedText> _animatedTexts(
     List<String> text,
     TextAlign textAlign,
-    TextStyle? textStyle,
+    TextStyle textStyle,
     Duration duration,
     double scalingFactor,
   ) =>

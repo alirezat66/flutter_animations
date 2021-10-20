@@ -5,7 +5,7 @@ import 'package:animation_training/widget/animated_text/src/animated_text.dart';
 import 'package:flutter/material.dart';
 
 class DigitalClockWithAnimation extends StatefulWidget {
-  DigitalClockWithAnimation({Key? key}) : super(key: key);
+  DigitalClockWithAnimation({Key key}) : super(key: key);
 
   @override
   _DigitalClockWithAnimationState createState() =>
@@ -86,12 +86,10 @@ class _DigitalClockWithAnimationState extends State<DigitalClockWithAnimation> {
         : '0${_dateTime.second}';
   }
 
-  TimeOfDay _timeOfDay = TimeOfDay.now();
   DateTime _dateTime = DateTime.now();
   void _checkClock() {
     Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
-        _timeOfDay = TimeOfDay.now();
         _dateTime = DateTime.now();
       });
     });

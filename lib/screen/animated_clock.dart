@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class AnimatedClock extends StatefulWidget {
-  AnimatedClock({Key? key}) : super(key: key);
+  AnimatedClock({Key key}) : super(key: key);
 
   @override
   _AnimatedClockState createState() => _AnimatedClockState();
@@ -11,9 +11,9 @@ class AnimatedClock extends StatefulWidget {
 
 class _AnimatedClockState extends State<AnimatedClock>
     with TickerProviderStateMixin {
-  late AnimationController _animSecondController;
-  late AnimationController _animMinuteController;
-  late AnimationController _animHoureController;
+  AnimationController _animSecondController;
+  AnimationController _animMinuteController;
+  AnimationController _animHoureController;
   double secondAngle = 0;
   double minuteAngle = 0;
   double hourAngle = 0;
@@ -46,7 +46,7 @@ class _AnimatedClockState extends State<AnimatedClock>
     int hour = 0;
     if (dateTime.hour > 12) {
       hour = dateTime.hour - 12;
-    }else{
+    } else {
       hour = dateTime.hour;
     }
 

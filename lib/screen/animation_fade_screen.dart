@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 class FadeAnimationScreen extends StatefulWidget {
-  FadeAnimationScreen({Key? key}) : super(key: key);
+  FadeAnimationScreen({Key key}) : super(key: key);
 
   @override
   _FadeAnimationScreenState createState() => _FadeAnimationScreenState();

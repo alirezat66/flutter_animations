@@ -4,7 +4,7 @@ import 'package:animation_training/screen/digital_clock_without_animation.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedRotationWidget extends StatefulWidget {
-  AnimatedRotationWidget({Key? key}) : super(key: key);
+  AnimatedRotationWidget({Key key}) : super(key: key);
 
   @override
   _AnimatedRotationWidgetState createState() => _AnimatedRotationWidgetState();

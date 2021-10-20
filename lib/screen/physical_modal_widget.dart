@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PhysicalModalAnimation extends StatefulWidget {
   final Curve curve;
-  PhysicalModalAnimation({Key? key,required this.curve}) : super(key: key);
+  PhysicalModalAnimation({Key key, this.curve}) : super(key: key);
 
   @override
   _PhysicalModalAnimationState createState() => _PhysicalModalAnimationState();

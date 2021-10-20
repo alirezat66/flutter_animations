@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class DigitalClockWithoutAnimation extends StatefulWidget {
-  DigitalClockWithoutAnimation({Key? key}) : super(key: key);
+  DigitalClockWithoutAnimation({Key key}) : super(key: key);
 
   @override
   _DigitalClockWithoutAnimationState createState() =>

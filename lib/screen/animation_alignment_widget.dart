@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AlignmentAnimationWidget extends StatefulWidget {
   final Curve curve;
-  AlignmentAnimationWidget({Key? key, required this.curve}) : super(key: key);
+  AlignmentAnimationWidget({Key key,this.curve}) : super(key: key);
 
   @override
   _AlignmentAnimationWidgetState createState() =>

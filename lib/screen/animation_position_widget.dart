@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PositionAnimationWidgwt extends StatefulWidget {
   final Curve curve;
-  PositionAnimationWidgwt({Key? key, required this.curve}) : super(key: key);
+  PositionAnimationWidgwt({Key key,  this.curve}) : super(key: key);
 
   @override
   _PositionAnimationWidgwtState createState() =>

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AnimatedTextWidget extends StatefulWidget {
   final Curve curve;
-  AnimatedTextWidget({Key? key, required this.curve}) : super(key: key);
+  AnimatedTextWidget({Key key,  this.curve}) : super(key: key);
 
   @override
   _AnimatedTextWidgetState createState() => _AnimatedTextWidgetState();

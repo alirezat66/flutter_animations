@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class OpacityAnimationWidget extends StatefulWidget {
   final Curve curve;
-  OpacityAnimationWidget({Key? key,required this.curve}) : super(key: key);
+  OpacityAnimationWidget({Key key, this.curve}) : super(key: key);
 
   @override
   _OpacityAnimationWidgetState createState() => _OpacityAnimationWidgetState();

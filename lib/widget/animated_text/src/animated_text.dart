@@ -13,7 +13,7 @@ abstract class AnimatedText {
   final TextAlign textAlign;
 
   /// [TextStyle] property for [Text] widget.
-  final TextStyle? textStyle;
+  final TextStyle textStyle;
 
   /// The Duration for the Animation Controller.
   ///
@@ -29,14 +29,14 @@ abstract class AnimatedText {
   final Characters textCharacters;
 
   AnimatedText({
-    required this.text,
+     this.text,
     this.textAlign = TextAlign.start,
     this.textStyle,
-    required this.duration,
+     this.duration,
   }) : textCharacters = text.characters;
 
   /// Return the remaining Duration for the Animation (when applicable).
-  Duration? get remaining => null;
+  Duration get remaining => null;
 
   /// Initialize the Animation.
   void initAnimation(AnimationController controller);
@@ -54,7 +54,7 @@ abstract class AnimatedText {
   Widget completeText(BuildContext context) => textWidget(text);
 
   /// Widget showing animated text, based on animation value(s).
-  Widget animatedBuilder(BuildContext context, Widget? child);
+  Widget animatedBuilder(BuildContext context, Widget child);
 }
 
 /// Base class for Animated Text widgets.
@@ -78,22 +78,22 @@ class AnimatedTextKit extends StatefulWidget {
   final bool stopPauseOnTap;
 
   /// Adds the onTap [VoidCallback] to the animated widget.
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
   /// Adds the onFinished [VoidCallback] to the animated widget.
   ///
   /// This method will run only if [isRepeatingAnimation] is set to false.
-  final VoidCallback? onFinished;
+  final VoidCallback onFinished;
 
   /// Adds the onNext callback to the animated widget.
   ///
   /// Will be called right before the next text, after the pause parameter
-  final void Function(int, bool)? onNext;
+  final void Function(int, bool) onNext;
 
   /// Adds the onNextBeforePause callback to the animated widget.
   ///
   /// Will be called at the end of n-1 animation, before the pause parameter
-  final void Function(int, bool)? onNextBeforePause;
+  final void Function(int, bool) onNextBeforePause;
 
   /// Set if the animation should not repeat by changing the value of it to false.
   ///
@@ -112,8 +112,8 @@ class AnimatedTextKit extends StatefulWidget {
   final int totalRepeatCount;
   final int startIndex;
   const AnimatedTextKit({
-    Key? key,
-    required this.animatedTexts,
+    Key key,
+     this.animatedTexts,
     this.pause = const Duration(milliseconds: 1000),
     this.displayFullTextOnTap = false,
     this.stopPauseOnTap = false,
@@ -137,9 +137,9 @@ class AnimatedTextKit extends StatefulWidget {
 
 class _AnimatedTextKitState extends State<AnimatedTextKit>
     with TickerProviderStateMixin {
-  late AnimationController _controller;
+   AnimationController _controller;
 
-  late AnimatedText _currentAnimatedText;
+   AnimatedText _currentAnimatedText;
 
   int _currentRepeatCount = 0;
 
@@ -147,7 +147,7 @@ class _AnimatedTextKitState extends State<AnimatedTextKit>
 
   bool _isCurrentlyPausing = false;
 
-  Timer? _timer;
+  Timer _timer;
 
   @override
   void initState() {
@@ -242,7 +242,7 @@ class _AnimatedTextKitState extends State<AnimatedTextKit>
   void _animationEndCallback(AnimationStatus state) {
     if (state == AnimationStatus.completed) {
       _setPause();
-      assert(null == _timer || !_timer!.isActive);
+      assert(null == _timer || !_timer.isActive);
       _timer = Timer(widget.pause, _nextAnimation);
     }
   }
@@ -263,7 +263,7 @@ class _AnimatedTextKitState extends State<AnimatedTextKit>
 
         _setPause();
 
-        assert(null == _timer || !_timer!.isActive);
+        assert(null == _timer || !_timer.isActive);
         _timer = Timer(
           Duration(
             milliseconds: max(

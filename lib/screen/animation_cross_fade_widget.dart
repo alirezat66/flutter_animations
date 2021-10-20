@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CrossFadeAnimationWidget extends StatefulWidget {
   final Curve curve;
-  CrossFadeAnimationWidget({Key? key,required this.curve}) : super(key: key);
+  CrossFadeAnimationWidget({Key key, this.curve}) : super(key: key);
 
   @override
   _CrossFadeAnimationWidgetState createState() =>

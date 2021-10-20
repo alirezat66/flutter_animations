@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class HeartBeat extends StatefulWidget {
-  HeartBeat({Key? key}) : super(key: key);
+  HeartBeat({Key key}) : super(key: key);
 
   @override
   _HeartBeatState createState() => _HeartBeatState();
 }
 
 class _HeartBeatState extends State<HeartBeat> with TickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation _beatForward, _beatBackward;
+   AnimationController _controller;
+   Animation _beatForward, _beatBackward;
   @override
   void initState() {
     _controller = AnimationController(

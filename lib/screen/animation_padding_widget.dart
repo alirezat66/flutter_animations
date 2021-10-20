@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class PaddingAnimationWidget extends StatefulWidget {
   final Curve curve;
-  PaddingAnimationWidget({Key? key, required this.curve}) : super(key: key);
+  PaddingAnimationWidget({Key key,  this.curve}) : super(key: key);
 
   @override
   _PaddingAnimationWidgetState createState() => _PaddingAnimationWidgetState();
